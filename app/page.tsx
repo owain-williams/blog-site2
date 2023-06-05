@@ -1,6 +1,7 @@
 import { currentUser, UserButton } from "@clerk/nextjs";
 import { PrismaClient, Post } from "@prisma/client";
 import { Button } from "@/components/ui/button";
+import BlogPreview from "@/components/blogpreview";
 
 const prisma = new PrismaClient();
 
@@ -15,22 +16,22 @@ export default async function Home() {
   // Get the user's posts
   const posts = await prisma.post.findMany({
     where: {
-      authorId: user.id,
       published: true,
     },
   });
 
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      <UserButton />
-      <h2>Hello there {user.id}</h2>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.content}</p>
-        </div>
+    <main className="flex flex-col items-center justify-between px-24 py-8">
+      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+        Blog Site
+      </h1>
+      <sub className="text-xl text-muted-foreground">
+        Welcome to the worst blog site
+      </sub>
+      <br />
+      {posts.map((post: Post) => (
+        <BlogPreview key={post.id} {...post} />
       ))}
-      <Button variant="outline">I am the button</Button>
     </main>
   );
 }
