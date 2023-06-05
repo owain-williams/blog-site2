@@ -11,6 +11,7 @@ import { clerkClient } from "@clerk/nextjs";
 import { Post } from "@prisma/client";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { Link } from "lucide-react";
 dayjs.extend(relativeTime);
 
 export default async function BlogPreview(post: Post) {
@@ -35,6 +36,9 @@ export default async function BlogPreview(post: Post) {
       </CardContent>
       <CardFooter>
         <p>{dayjs(post.createdAt).fromNow()}</p>
+        <Link href="/posts/[id]" className="ml-auto absolute right-6">
+          Read More...
+        </Link>
       </CardFooter>
     </Card>
   );
