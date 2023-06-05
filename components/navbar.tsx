@@ -1,5 +1,6 @@
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 const navItems = [
   {
@@ -27,7 +28,12 @@ export default async function NavBar() {
             </Link>
           ))}
         </div>
-        <UserButton />
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
       </div>
     </nav>
   );
