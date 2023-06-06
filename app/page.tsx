@@ -18,6 +18,9 @@ export default async function Home() {
     where: {
       published: true,
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
 
   return (
