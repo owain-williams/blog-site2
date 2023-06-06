@@ -8,12 +8,8 @@ const navItems = [
     href: "/dashboard",
   },
   {
-    name: "Item 2",
-    href: "/item2",
-  },
-  {
-    name: "Item 3",
-    href: "/item3",
+    name: "Home",
+    href: "/",
   },
 ];
 
