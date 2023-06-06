@@ -2,6 +2,8 @@ import { currentUser, UserButton } from "@clerk/nextjs";
 import { PrismaClient, Post } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import BlogPreview from "@/components/blogpreview";
+import BlogPreviewSkeleton from "@/components/blogpreviewskeleton";
+import { Suspense } from "react";
 
 const prisma = new PrismaClient();
 
@@ -32,9 +34,11 @@ export default async function Home() {
         Welcome to the worst blog site
       </sub>
       <br />
-      {posts.map((post: Post) => (
-        <BlogPreview key={post.id} {...post} />
-      ))}
+      <Suspense fallback={<BlogPreviewSkeleton />}>
+        {posts.map((post: Post) => (
+          <BlogPreview key={post.id} {...post} />
+        ))}
+      </Suspense>
     </main>
   );
 }
