@@ -4,8 +4,8 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 const navItems = [
   {
-    name: "Dashboard",
-    href: "/dashboard",
+    name: "Write",
+    href: "/write",
   },
   {
     name: "Home",
