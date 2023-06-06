@@ -16,21 +16,21 @@ export default function BlogPreviewSkeleton() {
       <CardHeader className="flex flex-row flex-wrap justify-between">
         <div className="my-auto">
           <CardTitle>
-            <Skeleton className="h-6 w-[250px]" />
+            <Skeleton className="h-6 w-[250px] my-1" />
           </CardTitle>
           <CardDescription>
-            <Skeleton className="h-4 w-[200px]" />
+            <Skeleton className="h-4 w-[200px] my-1" />
           </CardDescription>
         </div>
         <div className="mt-0">
-          <Skeleton className="h-12 w-12 rounded-full" />
+          <Skeleton className="h-12 w-12 rounded-full my-1" />
         </div>
       </CardHeader>
       <CardContent>
         <p>
-          <Skeleton className="h-4 w-[67vh]" />
-          <Skeleton className="h-4 w-[67vh]" />
-          <Skeleton className="h-4 w-[67vh]" />
+          <Skeleton className="h-4 w-[67vh] my-1" />
+          <Skeleton className="h-4 w-[67vh] my-1" />
+          <Skeleton className="h-4 w-[67vh] my-1" />
         </p>
       </CardContent>
       <CardFooter>
