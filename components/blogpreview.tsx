@@ -18,18 +18,22 @@ export default async function BlogPreview(post: Post) {
   const author = await clerkClient.users.getUser(post.authorId);
   return (
     <Card className="w-2/3 m-2 drop-shadow-md" key={post.id}>
-      <CardHeader>
-        <Image
-          className="rounded-full ml-auto right-6"
-          src={author.imageUrl}
-          width={48}
-          height={48}
-          alt={`${author.firstName}'s Profile Image`}
-        />
-        <CardTitle>{post.title}</CardTitle>
-        <CardDescription>
-          {`by ${author.firstName} ${author.lastName}`}
-        </CardDescription>
+      <CardHeader className="flex flex-row flex-wrap justify-between">
+        <div className="my-auto">
+          <CardTitle>{post.title}</CardTitle>
+          <CardDescription>
+            {`by ${author.firstName} ${author.lastName}`}
+          </CardDescription>
+        </div>
+        <div className="mt-0">
+          <Image
+            className="rounded-full"
+            src={author.imageUrl}
+            width={48}
+            height={48}
+            alt={`${author.firstName}'s Profile Image`}
+          />
+        </div>
       </CardHeader>
       <CardContent>
         <p>
