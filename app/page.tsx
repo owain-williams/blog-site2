@@ -1,21 +1,20 @@
-import { currentUser, UserButton } from "@clerk/nextjs";
-import { PrismaClient, Post } from "@prisma/client";
-import { Button } from "@/components/ui/button";
 import BlogPreview from "@/components/blogpreview";
 import BlogPreviewSkeleton from "@/components/blogpreviewskeleton";
+import { currentUser } from "@clerk/nextjs";
+import { Post, PrismaClient } from "@prisma/client";
 import { Suspense } from "react";
 
 const prisma = new PrismaClient();
 
 export default async function Home() {
-  // Get the USER
+  // Get the user, in order to use the id
   const user = await currentUser();
 
   if (!user) {
     return "";
   }
 
-  // Get the user's posts
+  // Get all posts
   const posts = await prisma.post.findMany({
     where: {
       published: true,
@@ -34,6 +33,7 @@ export default async function Home() {
         Welcome to the worst blog site
       </sub>
       <br />
+      {/* This displays a "Skeleton" while the posts are being fetched */}
       <Suspense fallback={<BlogPreviewSkeleton />}>
         {posts.map((post: Post) => (
           <BlogPreview key={post.id} {...post} />

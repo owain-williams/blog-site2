@@ -1,5 +1,5 @@
+import { clerkClient } from "@clerk/nextjs";
 import { PrismaClient } from "@prisma/client";
-import { UserButton, clerkClient } from "@clerk/nextjs";
 
 const prisma = new PrismaClient();
 
@@ -14,6 +14,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
     return <div>Post not found.</div>;
   }
 
+  // Get the author of the post, this may not be the logged in user
   const author = await clerkClient.users.getUser(post.authorId);
 
   return (

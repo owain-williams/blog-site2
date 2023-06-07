@@ -1,15 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { currentUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { PrismaClient } from "@prisma/client";
 import { redirect } from "next/navigation";
-
-import { Post, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
 export default async function Dashboard() {
+
+  // This function is called when the form is submitted
+  // It's a new way of working in Next 13 using "Server Actions"
+  // https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions
   async function addPost(formData: FormData) {
     "use server";
 
