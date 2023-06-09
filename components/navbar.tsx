@@ -21,7 +21,7 @@ export default async function NavBar() {
   ];
 
   return (
-    <nav className="flex flex-row h-20 min-w-full border border-x-0 border-t-0 border-slate-200 drop-shadow-md">
+    <nav className="flex flex-row h-16 min-w-full border border-x-0 border-t-0 border-slate-200 drop-shadow-md">
       <div className="flex flex-row items-center justify-end w-full px-4">
         <SignedIn>
           <div className="pr-8">
