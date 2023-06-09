@@ -42,7 +42,7 @@ export default async function Dashboard() {
         <Input name="postTitle" placeholder="Title" className="bg-white" />
         <Textarea
           name="postContents"
-          placeholder="Type your shitty post here."
+          placeholder="Write your post here."
           className="bg-white"
         />
         <Button type="submit">Publish Post</Button>
