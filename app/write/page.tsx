@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 const prisma = new PrismaClient();
 
 export default async function Dashboard() {
-
   // This function is called when the form is submitted
   // It's a new way of working in Next 13 using "Server Actions"
   // https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions
@@ -32,7 +31,7 @@ export default async function Dashboard() {
     redirect(`/posts/${post.id}`);
   }
   return (
-    <main className="flex flex-col items-center justify-between px-24 py-8">
+    <main className="flex flex-col items-center justify-between px-24 py-8 bg-indigo-50">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
         Write
       </h1>
