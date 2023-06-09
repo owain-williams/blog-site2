@@ -33,7 +33,7 @@ export default async function NavBar() {
               </Link>
             ))}
           </div>
-          <UserButton />
+          <UserButton afterSignOutUrl="/" />
         </SignedIn>
         <SignedOut>
           <Button asChild>

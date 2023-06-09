@@ -7,13 +7,6 @@ import { Suspense } from "react";
 const prisma = new PrismaClient();
 
 export default async function Home() {
-  // Get the user, in order to use the id
-  const user = await currentUser();
-
-  if (!user) {
-    return "";
-  }
-
   // Get all posts
   const posts = await prisma.post.findMany({
     where: {
