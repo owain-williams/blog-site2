@@ -25,7 +25,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="flex flex-col items-center justify-between px-0 md:px-24 py-8 bg-indigo-50">
+    <main className="flex flex-col items-center justify-between px-0 md:px-24 py-8 bg-gradient-to-r from-indigo-50 from-10% via-sky-50 via-30% to-emerald-50 to-90%">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
         Blog Site
       </h1>

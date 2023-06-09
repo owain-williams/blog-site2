@@ -9,14 +9,14 @@ export default async function NavBar() {
   const pathname = usePathname();
   const navItems = [
     {
-      name: "Write",
-      href: "/write",
-      isActive: pathname === "/write",
-    },
-    {
       name: "Home",
       href: "/",
       isActive: pathname === "/",
+    },
+    {
+      name: "Write",
+      href: "/write",
+      isActive: pathname === "/write",
     },
   ];
 

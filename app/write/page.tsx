@@ -31,7 +31,7 @@ export default async function Dashboard() {
     redirect(`/posts/${post.id}`);
   }
   return (
-    <main className="flex flex-col items-center justify-between px-24 py-8 bg-indigo-50">
+    <main className="flex flex-col items-center h-[calc(100vh-4rem)] px-0 md:px-24 py-8 bg-gradient-to-r from-indigo-50 from-10% via-sky-50 via-30% to-emerald-50 to-90%">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
         Write
       </h1>
@@ -39,10 +39,11 @@ export default async function Dashboard() {
         Your shitty blog post here
       </sub>
       <form className="grid w-full gap-2 pt-8" action={addPost}>
-        <Input name="postTitle" placeholder="Title" />
+        <Input name="postTitle" placeholder="Title" className="bg-white" />
         <Textarea
           name="postContents"
           placeholder="Type your shitty post here."
+          className="bg-white"
         />
         <Button type="submit">Publish Post</Button>
       </form>
