@@ -30,7 +30,7 @@ export default async function Home() {
         Blog Site
       </h1>
       <sub className="text-xl text-muted-foreground">
-        Welcome to the worst blog site
+        Leave your blog post for others to read
       </sub>
       <br />
       {/* This displays a "Skeleton" while the posts are being fetched */}

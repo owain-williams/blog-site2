@@ -36,7 +36,7 @@ export default async function Dashboard() {
         Write
       </h1>
       <sub className="text-xl text-muted-foreground">
-        Your shitty blog post here
+        Your beautiful blog post here
       </sub>
       <form className="grid w-full gap-2 pt-8" action={addPost}>
         <Input name="postTitle" placeholder="Title" className="bg-white" />
